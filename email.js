@@ -1,6 +1,8 @@
 const input = document.querySelector("input.form__email-text");
 const statutCheckbox = document.getElementById("cb");
 const privacyCheckbox = document.getElementById("cb2");
+const statutCheckboxFrame = document.querySelector(".cb__box-path");
+const privacyCheckboxFrame = document.querySelector(".cb2__box-path");
 const form = document.forms["email"];
 const span = document.querySelector(".error-message");
 
@@ -15,11 +17,23 @@ const validation = () => {
     reg.test(emailValue)
   ) {
     span.innerHTML = "";
-    console.log("przejdz dalej");
+    input.style.border = "1px solid transparent";
+    statutCheckboxFrame.style.stroke = "";
+    privacyCheckboxFrame.style.stroke = "";
   } else {
-    if (!privacyCheckbox.checked || !statutCheckbox.checked)
+    if (!statutCheckbox.checked) {
       span.innerHTML = "zaznacz wymagane pola";
-    if (!reg.test(emailValue)) span.innerHTML = "podaj poprawny adres e-mail";
+      statutCheckboxFrame.style.stroke = "red";
+    }
+    if (!privacyCheckbox.checked) {
+      span.innerHTML = "zaznacz wymagane pola";
+      privacyCheckboxFrame.style.stroke = "red";
+    }
+
+    if (!reg.test(emailValue)) {
+      input.style.border = "1px solid red";
+      span.innerHTML = "podaj poprawny adres e-mail";
+    }
     return console.log("stop");
   }
 };

@@ -1,5 +1,5 @@
-@import "./variables.scss";
-@import "./scroll.scss";
+@import "variables";
+@import "scroll";
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 
 * {
@@ -627,7 +627,7 @@ button[type="submit"] {
           width: 100%;
           height: 100%;
           padding-left: 3.039vw;
-          border: none;
+          border: 1px solid transparent;
           border-radius: 100px;
           font-family: "DM Sans", sans-serif;
           color: $light-brown-color;
@@ -704,7 +704,7 @@ button[type="submit"] {
           &:checked + label {
             .check-bg {
               stroke: $green-color;
-              fill: #21432a;
+              fill: $green-color;
             }
             .check-tick {
               stroke-dasharray: 70;
@@ -734,7 +734,7 @@ button[type="submit"] {
   }
   .error-message {
     color: red;
-    padding-left: .5vw;
+    padding-left: 0.5vw;
   }
 }
 
