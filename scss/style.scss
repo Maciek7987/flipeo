@@ -395,19 +395,24 @@ input.btn {
       color: #ffefdf;
     }
   }
-  .products {
-    display: grid;
+  .slider {
     position: absolute;
-    right: 12px;
+    right: 0;
     top: 11.442vh;
     width: 59.843vw;
-    height: 35.219vh;
-    grid-template-columns: repeat(4, 1fr);
+    height: 36.219vh;
+    overflow-x: hidden;
+  }
+  .products {
+    display: grid;
+    grid-template-columns: repeat($number-of-products, 13.822vw);
     column-gap: 1.251vw;
+    transition: 0.2s ease-in-out;
 
     .product {
       display: grid;
       position: relative;
+      height: 35.219vh;
       grid-template-rows: 19.21vh 1fr 7.274vh;
       background: #ffffff;
       box-shadow: 0px 1px 8px rgba(44, 22, 0, 0.08),
@@ -415,9 +420,7 @@ input.btn {
         0px 3px 4px rgba(44, 22, 0, 0.04);
       border-radius: 20px;
       color: $light-brown-color;
-      &:nth-child(4) {
-        opacity: 0.45;
-      }
+      transition: 0.3s;
       .iconHeart {
         position: absolute;
         left: 84.85%;
@@ -512,7 +515,7 @@ input.btn {
       border: none;
       border-radius: 100%;
       cursor: pointer;
-      transition: 0.2s;
+      transition: 0.2s ease-in-out;
       &::before {
         content: "";
         display: block;
@@ -533,21 +536,36 @@ input.btn {
         }
       }
       &--disable {
+        pointer-events: none;
+        &:hover {
+          display: none;
+        }
         &::before {
           background-image: url("../images/section/buttonsArrow/left/Property\ 1=disabled.svg");
+          pointer-events: none;
         }
       }
     }
 
     &__right {
-      transform: scale(1.03);
       &::before {
+        transform: scale(1.031);
         background-image: url("../images/section/buttonsArrow/right/Property\ 1=default-1.svg");
       }
       &:hover {
         background-color: $green-color;
         &::before {
           background-image: url("../images/section/buttonsArrow/right/Property\ 1=hover-1.svg");
+        }
+      }
+      &--disable {
+        pointer-events: none;
+        &:hover {
+          display: none;
+        }
+        &::before {
+          transform: rotate(180deg) scale(1.031);
+          background-image: url("../images/section/buttonsArrow/left/Property\ 1=disabled.svg");
         }
       }
     }
@@ -782,6 +800,7 @@ input.btn {
     p {
       width: 92px;
       height: 26px;
+      font-size: 16px;
       color: $light-brown-color;
       transform: translateY(-1px);
     }
