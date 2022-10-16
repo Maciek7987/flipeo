@@ -28,7 +28,7 @@ h3 {
 p,
 span,
 input,
-input.btn {
+button[type="submit"] {
   font-weight: 400;
   font-size: 0.834vw;
   line-height: 160%;
@@ -731,6 +731,10 @@ input.btn {
     bottom: -7.2vh;
     z-index: 90;
     transform: scaleX(0.968);
+  }
+  .error-message {
+    color: red;
+    padding-left: .5vw;
   }
 }
 

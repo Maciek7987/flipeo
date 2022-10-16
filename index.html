@@ -277,7 +277,8 @@
             Zapisz się do newslettera i bądź na bieżąco ze wszystkimi nowościami
             oraz promocjami na flipeo.io.
           </p>
-          <form class="form" action="#">
+
+          <form class="form" name="email">
             <div class="form__email">
               <img
                 class="form__email-img"
@@ -289,11 +290,9 @@
                 type="text"
                 placeholder="Wpisz swój adres e-mail"
               />
-              <input
-                class="form__email-submit btn"
-                type="submit"
-                value="Zapisz się"
-              />
+              <button class="form__email-submit btn" type="submit">
+                Zapisz się
+              </button>
             </div>
             <div class="inner">
               <input type="checkbox" name="cb" id="cb" />
@@ -384,7 +383,9 @@
                 >
               </label>
             </div>
+             <span class="error-message"></span>
           </form>
+         
         </div>
       </div>
       <img class="leaves-left" src="./images/section/leaves-left.png" alt="" />
@@ -414,6 +415,7 @@
         <!-- after img svg -->
       </div>
     </footer>
+    <script src="email.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
